@@ -1,41 +1,125 @@
-# PBL Cyber Security
+# Logbook Proyek PBL Keamanan Siber - Kelompok 3
 
-## Network Perimeter Guard
+**Skenario:** Network Perimeter Guard – Simulasi Denial of Service (DoS) pada Router Gateway / Firewall
 
-### Kelompok 3
+**Anggota:**
 
-| Nama | NIM | Peran |
-|------|------|------|
-| Senthelee Vannessa Lai | J0404231101 | Project Manager |
-| Hafiz Tiftazani | J0404231020 | Security Engineer |
-| Alicia Maharani | J0404231090 | Network Analyst |
-| Rafie Hafizhsatryo | J0404231034 | Lead Analyst |
-
----## Deskripsi Proyek
-
-Proyek ini merupakan simulasi serangan **Denial of Service (DoS)** terhadap **Router Gateway / Firewall MikroTik**. Pengujian dilakukan menggunakan ICMP Flood, TCP SYN Flood, dan UDP Flood. Selanjutnya dilakukan analisis menggunakan Wireshark serta penerapan firewall rule sebagai mitigasi.
+1. Senthelee Vannessa Lai – Project Manager
+2. Hafiz Tiftazani – Security Engineer
+3. Alicia Maharani – Network Analyst
+4. Rafie Hafizhsatryo – Lead Analyst
 
 ---
 
-## Tools
+# Log Aktivitas Mingguan
 
-- VirtualBox
-- MikroTik CHR
-- Kali Linux
-- Ubuntu
-- Wireshark
-- hping3
+## Minggu 1–3 : Fase Setup
+
+**Target**
+- Menentukan skenario proyek.
+- Membangun lingkungan virtual untuk simulasi.
+
+**Update**
+- Install VirtualBox.
+- Install Kali Linux sebagai attacker.
+- Install MikroTik CHR sebagai Router Gateway.
+- Install Ubuntu Desktop sebagai Client dan Analyst.
+- Menyusun topologi jaringan.
+
+**Kendala**
+- Penyesuaian konfigurasi jaringan antar Virtual Machine agar seluruh perangkat dapat saling berkomunikasi.
+
+**Solusi**
+- Mengatur mode adapter dan konfigurasi IP pada setiap VM.
+
+**Artefak**
+- Screenshot topologi jaringan.
+- Screenshot VirtualBox.
 
 ---
 
-## Status Proyek
+## Minggu 4–7 : Hardening & Baseline
 
-✅ Selesai
+**Target**
+- Memastikan jaringan berjalan normal sebelum pengujian.
+
+**Update**
+- Konfigurasi IP Address seluruh perangkat.
+- Pengujian konektivitas menggunakan perintah ping.
+- Capture trafik normal menggunakan Wireshark.
+
+**Status**
+✅ Fase baseline selesai.
+
+**Artefak**
+- Screenshot hasil ping.
+- Screenshot capture Wireshark.
 
 ---
 
-## Struktur Folder
+## Minggu 8–11 : Fase Serangan (Offensive)
 
-- Documentation
-- Final-Report
-- Logs
+**Target**
+- Melakukan simulasi serangan Denial of Service.
+
+**Update**
+- Melakukan ICMP Flood menggunakan hping3.
+- Melakukan TCP SYN Flood.
+- Melakukan UDP Flood.
+- Monitoring trafik menggunakan Wireshark.
+- Monitoring resource MikroTik.
+
+**Hasil**
+- Terjadi lonjakan trafik menuju Router Gateway.
+- CPU Router meningkat saat serangan berlangsung.
+- Client mengalami gangguan akses jaringan.
+
+**Artefak**
+- Screenshot terminal hping3.
+- Screenshot Wireshark.
+- Screenshot Resource MikroTik.
+
+---
+
+## Minggu 12–14 : Fase Mitigasi
+
+**Target**
+- Mengurangi dampak serangan menggunakan firewall.
+
+**Update**
+- Menambahkan firewall rule pada MikroTik.
+- Menerapkan pembatasan ICMP.
+- Menerapkan pembatasan TCP SYN.
+- Menerapkan pembatasan UDP.
+- Melakukan pengujian ulang.
+
+**Status**
+✅ Firewall berhasil mengurangi dampak serangan.
+
+**Artefak**
+- Screenshot konfigurasi firewall.
+- Screenshot hasil monitoring setelah hardening.
+
+---
+
+## Minggu 15–16 : Evaluasi
+
+**Target**
+- Mengevaluasi hasil pengujian.
+
+**Update**
+- Membandingkan kondisi sebelum dan sesudah hardening.
+- Menyusun laporan akhir.
+- Melakukan dokumentasi hasil proyek.
+
+**Status**
+✅ Proyek selesai.
+
+---
+
+# Lessons Learned
+
+- Serangan DoS dapat mengganggu aspek availability layanan jaringan.
+- Wireshark membantu proses deteksi dan analisis trafik.
+- Firewall MikroTik efektif mengurangi dampak ICMP Flood, TCP SYN Flood, dan UDP Flood.
+- Dokumentasi setiap tahap mempermudah proses evaluasi proyek.
